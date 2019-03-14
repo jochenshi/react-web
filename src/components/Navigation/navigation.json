@@ -1,0 +1,51 @@
+[
+    {
+        "text": "首页",
+        "key": "home",
+        "value": "home",
+        "page": "asdasd",
+        "icon": "",
+        "children": []
+    },
+    {
+        "text": "服务",
+        "key": "service",
+        "value": "service",
+        "page": "asdasd",
+        "icon": "",
+        "children": []
+    },
+    {
+        "text": "商业案例",
+        "key": "example",
+        "value": "example",
+        "page": "asdasd",
+        "icon": "",
+        "children": [
+            {
+                "text": "小程序",
+                "key": "mini",
+                "value": "mini",
+                "page": "asdasd",
+                "icon": "",
+                "children": []
+            },
+            {
+                "text": "网站",
+                "key": "website",
+                "value": "website",
+                "page": "asdasd",
+                "icon": "",
+                "children": []
+            }
+        ]
+    },
+    {
+        "text": "关于我们",
+        "key": "about",
+        "value": "about",
+        "page": "asdasd",
+        "icon": "",
+        "children": []
+    }
+]
