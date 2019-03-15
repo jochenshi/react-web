@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 import Navigation from '../../components/Navigation/index';
-import HomePage from '../HomePage/index';
+import HomePage from '../../pages/HomePage/index';
 
 class Site extends React.Component {
     constructor(props) {
