@@ -1,0 +1,30 @@
+.navigation-mobile{
+  display none
+  position fixed
+  top 0
+  width 100%
+  img{
+    height 50px
+    width 100px
+    margin-right 100px
+  }
+  .right-icon{
+    font-size 24px
+    cursor pointer
+  }
+  .child-ul{
+    li{
+      padding 10px
+      font-size 14px
+      &:hover{
+        background-color #e3e3e3
+      }
+    }
+  }
+}
+
+@media only screen and  (max-width: 768px) {
+  .navigation-mobile{
+    display block
+  }
+}

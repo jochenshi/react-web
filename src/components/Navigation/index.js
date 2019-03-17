@@ -1,7 +1,7 @@
 import React from 'react';
 import {Menu} from 'antd';
 
-import menuData from './navigation.json'
+import menuData from '../../assets/navigation.json'
 import Logo from '../../assets/logo.svg';
 
 import './style.styl';
@@ -24,7 +24,7 @@ class Navigation extends React.Component {
                     return (
                         <Item key={item.key}>{item.text}</Item>
                     );
-                } else if(item.children && item.children.length) {
+                } else if(item.children.length) {
                     return (
                         <SubMenu
                             key={item.key}
@@ -48,7 +48,7 @@ class Navigation extends React.Component {
             mode = 'horizontal'
         } = this.props;
         return (
-            <div className='navigation-content'>
+            <div className='navigation-content navigation-web'>
                 <div className="logo">
                     <img src={Logo}/>
                 </div>

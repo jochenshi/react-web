@@ -1,10 +1,20 @@
-.navigation-content{
-    .logo{
-        float left
-        img{
-            height 64px
-            width 200px
-            margin-right 100px
-        }
+.navigation-web{
+  display none
+  position fixed
+  top 0
+  width 100%
+  .logo{
+      float left
+      img{
+          height 64px
+          width 200px
+          margin-right 100px
+      }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+    .navigation-web{
+        display block
     }
 }

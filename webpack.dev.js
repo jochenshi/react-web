@@ -15,11 +15,18 @@ module.exports = merge(
                 inject: false,
                 template: HTMLTemplate,
                 title: 'webpack',
-                appMountId: 'root'
+                appMountId: 'root',
+                meta: [
+                    {
+                        name: 'viewport',
+                        content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'
+                    }
+                ]
             })
         ],
         devServer: {
             contentBase: path.resolve(__dirname, './dist'),
+            host: '0.0.0.0',
             port: 3001,
             hot: true,
             inline: true,

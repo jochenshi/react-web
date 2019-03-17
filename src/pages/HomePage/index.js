@@ -1,6 +1,9 @@
 import React from 'react';
 
 import './style.styl';
+import Pic1 from '../../assets/pic1.svg';
+import Pic2 from '../../assets/pic2.svg';
+import Pic3 from '../../assets/pic3.svg';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -8,58 +11,61 @@ class HomePage extends React.Component {
         this.test = new Array(100);
     }
 
-    generateRow = () => {
-        const arr = [];
-        for(let i = 0; i < 100; i++) {
-            arr.push((
-            <div className="row" key={i}>
-                <div className="col">asdasd1</div>
-                <div className="col">asdasd2</div>
-                <div className="col">asdasd3</div>
-                <div className="col">asdasd4</div>
-                <div className="col">asdasd5</div>
-                <div className="col">asdasd6</div>
-                <div className="col">asdasd7</div>
-                <div className="col">asdasd8</div>
-                <div className="col">asdasd9</div>
-                <div className="col">asdasd10</div>
-                <div className="col">asdasd11</div>
-                <div className="col">asdasd12</div>
-                <div className="col">asdasd13</div>
-                <div className="col">asdasd14</div>
-            </div>
-        ))
-        }
-        return arr;
-    };
-
     render() {
         return (
-            <div>
-                <div className="table-content">
-                    <div className="header row">
-                        <div className="col">asdasd1</div>
-                        <div className="col">asdasd2</div>
-                        <div className="col">asdasd3</div>
-                        <div className="col">asdasd4</div>
-                        <div className="col">asdasd5</div>
-                        <div className="col">asdasd6</div>
-                        <div className="col">asdasd7</div>
-                        <div className="col">asdasd8</div>
-                        <div className="col">asdasd9</div>
-                        <div className="col">asdasd10</div>
-                        <div className="col">asdasd11</div>
-                        <div className="col">asdasd12</div>
-                        <div className="col">asdasd13</div>
-                        <div className="col">asdasd14</div>
-                    </div>
-                    <div className="content">
-                        {
-                            this.generateRow()
-                        }
+            <React.Fragment>
+                <div id={'hero'}>
+                    <div className={'content'}>
+                        <p className={'text'}>
+                            Helping our customers<br/>
+                            to provide faster and more reliable<br/>
+                            software products<br/>
+                        </p>
                     </div>
                 </div>
-            </div>
+                <div id={'body'}>
+                    <div className={'case-display'}>
+                        <p className={'label'}>我们的案例</p>
+                        <div className={'card-content'}>
+                            <div className={'single-card'}>
+                                <img src={Pic1}/>
+                                <span>This is information display area</span>
+                                <p>查看更多</p>
+                            </div>
+                            <div className={'single-card'}>
+                                <img src={Pic2}/>
+                                <span>This is information display area</span>
+                                <p>查看更多</p>
+                            </div>
+                            <div className={'single-card'}>
+                                <img src={Pic3}/>
+                                <span>This is information display area</span>
+                                <p>查看更多</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={'case-display'}>
+                        <p className={'label'}>经营范围</p>
+                        <div className={'card-content'}>
+                            <div className={'single-card'}>
+                                <img src={Pic1}/>
+                                <span>This is information display area</span>
+                                <p>查看更多</p>
+                            </div>
+                            <div className={'single-card'}>
+                                <img src={Pic2}/>
+                                <span>This is information display area</span>
+                                <p>查看更多</p>
+                            </div>
+                            <div className={'single-card'}>
+                                <img src={Pic3}/>
+                                <span>This is information display area</span>
+                                <p>查看更多</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment>
         );
     }
 }
