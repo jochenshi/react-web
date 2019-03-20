@@ -5,12 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        vendor: [
-            'react',
-            'react-dom',
-            'react-router-dom'
-        ]
+        index: './src/index.js'
+        // vendor: [
+        //     'react',
+        //     'react-dom',
+        //     'react-router-dom'
+        // ]
     },
     module: {
         rules: [
@@ -54,4 +54,4 @@ module.exports = {
         publicPath: '/',
         filename: '[name].bundle.js'
     }
-}
+};

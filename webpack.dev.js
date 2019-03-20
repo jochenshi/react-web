@@ -21,9 +21,17 @@ module.exports = merge(
                         name: 'viewport',
                         content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'
                     }
+                ],
+                scripts: [
+                    'https://unpkg.com/react@16/umd/react.production.min.js',
+                    'https://unpkg.com/react-dom@16/umd/react-dom.production.min.js'
                 ]
             })
         ],
+        externals: {
+            'react': 'React',
+            'react-dom': 'ReactDOM'
+        },
         devServer: {
             contentBase: path.resolve(__dirname, './dist'),
             host: '0.0.0.0',
