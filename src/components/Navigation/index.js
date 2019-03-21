@@ -1,5 +1,7 @@
 import React from 'react';
-import {Menu} from 'antd';
+// import {Menu} from 'antd';
+import {Link} from 'react-router-dom';
+import {Menu} from '../index';
 
 import menuData from '../../assets/navigation.json'
 import Logo from '../../assets/logo.svg';
@@ -7,7 +9,7 @@ import Logo from '../../assets/logo.svg';
 import './style.styl';
 
 const {
-    SubMenu, Item
+    Item
 } = Menu;
 
 class Navigation extends React.Component {
@@ -16,13 +18,15 @@ class Navigation extends React.Component {
         console.log(menuData);
     }
 
-    generateMenu = (data) => {
+    generateMenus = (data) => {
         const menus = data || [];
         if(menus.length) {
             return menus.map(item => {
                 if(!item.children || !item.children.length) {
                     return (
-                        <Item key={item.key}>{item.text}</Item>
+                        <Item key={item.key}>
+                            <Link to={item.page}>{item.text}</Link>
+                        </Item>
                     );
                 } else if(item.children.length) {
                     return (
@@ -41,7 +45,27 @@ class Navigation extends React.Component {
             console.error('menu data is empty');
             return '';
         }
-    }
+    };
+
+    generateMenu = (data) => {
+        const menus = data || [];
+        if(menus.length) {
+            return menus.map(item => {
+                if(!item.children || !item.children.length) {
+                    return (
+                        <Item key={item.key}>
+                            <Link to={item.page}>{item.text}</Link>
+                        </Item>
+                    );
+                } else if(item.children.length) {
+                    return '';
+                }
+            });
+        } else {
+            console.error('menu data is empty');
+            return '';
+        }
+    };
 
     render() {
         const {

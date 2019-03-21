@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavBar, List} from 'antd-mobile';
-import {
-    Icon
-} from 'antd';
+// import {
+//     Icon
+// } from 'antd';
 
 
 import Logo from '../../../assets/logo.svg';
@@ -92,13 +92,13 @@ class MobileNavigation extends React.Component{
                 <NavBar
                     mode={"dark"}
                     leftContent={<img src={Logo}/>}
-                    rightContent={
-                        <Icon
-                            className={'right-icon'}
-                            type={this.state.showMenu ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.clickNavRight}
-                        />
-                    }
+                    // rightContent={
+                    //     <Icon
+                    //         className={'right-icon'}
+                    //         type={this.state.showMenu ? 'menu-unfold' : 'menu-fold'}
+                    //         onClick={this.clickNavRight}
+                    //     />
+                    // }
                 />
                 {
                     this.state.showMenu ? (

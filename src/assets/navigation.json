@@ -3,7 +3,7 @@
         "text": "首页",
         "key": "home",
         "value": "home",
-        "page": "asdasd",
+        "page": "/",
         "icon": "",
         "children": []
     },
@@ -44,7 +44,7 @@
         "text": "关于我们",
         "key": "about",
         "value": "about",
-        "page": "asdasd",
+        "page": "/about",
         "icon": "",
         "children": []
     }
