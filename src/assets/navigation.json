@@ -44,7 +44,7 @@
         "text": "关于我们",
         "key": "about",
         "value": "about",
-        "page": "asdasd",
+        "page": "/about",
         "icon": "",
         "children": []
     }

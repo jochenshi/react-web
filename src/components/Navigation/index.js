@@ -1,5 +1,6 @@
 import React from 'react';
 import {Menu} from 'antd';
+import {Link} from 'react-router-dom';
 
 import menuData from '../../assets/navigation.json'
 import Logo from '../../assets/logo.svg';
@@ -22,7 +23,9 @@ class Navigation extends React.Component {
             return menus.map(item => {
                 if(!item.children || !item.children.length) {
                     return (
-                        <Item key={item.key}>{item.text}</Item>
+                        <Item key={item.key}>
+                            <Link to={item.page}>{item.text}</Link>
+                        </Item>
                     );
                 } else if(item.children.length) {
                     return (
@@ -41,7 +44,11 @@ class Navigation extends React.Component {
             console.error('menu data is empty');
             return '';
         }
-    }
+    };
+
+    clickMenu = (key) => {
+        console.log(key);
+    };
 
     render() {
         const {
@@ -55,6 +62,7 @@ class Navigation extends React.Component {
                 <Menu
                     mode={mode}
                     style={{'lineHeight': '64px'}}
+                    onClick={this.clickMenu}
                 >
                     {
                         this.generateMenu(menuData)
