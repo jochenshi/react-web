@@ -9,7 +9,7 @@ import Logo from '../../assets/logo.svg';
 import './style.styl';
 
 const {
-    Item
+    Item, SubMenu
 } = Menu;
 
 class Navigation extends React.Component {
@@ -58,7 +58,14 @@ class Navigation extends React.Component {
                         </Item>
                     );
                 } else if(item.children.length) {
-                    return '';
+                    return (
+                        <SubMenu
+                            key={item.key}
+                            title={item.text}
+                        >
+                            {this.generateMenu(item.children)}
+                        </SubMenu>
+                    );
                 }
             });
         } else {
