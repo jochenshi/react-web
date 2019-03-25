@@ -16,6 +16,7 @@ module.exports = merge(
                 template: HTMLTemplate,
                 title: 'webpack',
                 appMountId: 'root',
+                favicon: './src/assets/favicon.ico',
                 meta: [
                     {
                         name: 'viewport',
