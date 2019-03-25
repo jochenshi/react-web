@@ -34,7 +34,7 @@ module.exports = [
                 template: HTMLTemplate,
                 title: 'Home',
                 appMountId: 'root',
-                favicon: './src/assets/logo.png',
+                favicon: './src/assets/favicon.ico',
                 meta: [
                     {
                         name: 'viewport',
