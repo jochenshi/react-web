@@ -24,7 +24,7 @@ class Site extends React.Component {
                 <div className={'main-content'}>
                     <Switch>
                         <Route path="/" exact component={HomePage} />
-                        <Route path={'/about'} component={AboutPage}/>
+                        <Route path={'/:as'} component={AboutPage}/>
                     </Switch>
                 </div>
             </div>

@@ -25,9 +25,7 @@ module.exports = [
         externals: {
             'react': 'React',
             'react-dom': 'ReactDOM',
-            'react-router-dom': 'ReactRouterDOM',
-            'antd': 'antd',
-            'antd-mobile': 'antdMobile'
+            'react-router-dom': 'ReactRouterDOM'
         },
         plugins: [
             new Visualizer(),
@@ -43,15 +41,10 @@ module.exports = [
                     }
                 ],
                 minify: true,
-                links: [
-                    'https://cdnjs.cloudflare.com/ajax/libs/antd/3.15.1/antd.min.css'
-                ],
                 scripts: [
                     'https://unpkg.com/react@16/umd/react.production.min.js',
                     'https://unpkg.com/react-dom@16/umd/react-dom.production.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.0.0/react-router-dom.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/antd/3.15.1/antd-with-locales.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/antd-mobile/2.2.9/antd-mobile.min.js'
+                    'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.3.1/react-router-dom.min.js'
                 ]
             })
         ],
