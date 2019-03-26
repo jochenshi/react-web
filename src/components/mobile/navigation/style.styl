@@ -3,12 +3,23 @@
   position fixed
   top 0
   width 100%
+  .mobile-nav{
+    display flex
+    align-items center
+    background-color #efecec
+    .content{
+      flex 1
+    }
+    .right{
+      margin-right 15px
+    }
+  }
   img{
     height 50px
     width 100px
     margin-right 100px
   }
-  .right-icon{
+  .iconfont{
     font-size 24px
     cursor pointer
   }
@@ -19,6 +30,14 @@
       &:hover{
         background-color #e3e3e3
       }
+    }
+  }
+  .mobile-menu{
+    li{
+      padding 15px
+      cursor pointer
+      background-color #fff
+      border-bottom 1px solid #e3e3e3
     }
   }
 }

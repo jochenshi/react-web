@@ -1,8 +1,7 @@
 import React from 'react';
-import {NavBar, List} from 'antd-mobile';
-import {
-    Icon
-} from 'antd';
+import AngelComponent from '../../../components/Component/component';
+import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router'
 
 
 import Logo from '../../../assets/logo.svg';
@@ -10,9 +9,7 @@ import MenuData from '../../../assets/navigation';
 
 import './style.styl';
 
-const ListItem = List.Item;
-
-class MobileNavigation extends React.Component{
+class MobileNavigation extends AngelComponent{
     constructor(props) {
         super(props);
         this.state = {
@@ -29,35 +26,34 @@ class MobileNavigation extends React.Component{
             return menus.map(item => {
                 if(!item.children || !item.children.length) {
                     return (
-                        <ListItem
-                            arrow={'horizontal'}
+                        <li
                             onClick={() => {
-                                console.log(11);
+                                this.setState({
+                                    'showMenu': false
+                                });
+                                this.props.history.push(item.page);
                             }}
-                        >{item.text}</ListItem>
+                        >
+                            {item.text}
+                        </li>
                     );
                 } else if(item.children.length) {
                     return (
                         <React.Fragment>
-                            <ListItem
-                                extra={<Icon type={flag[item.key] ? 'minus': 'plus'} />}
-                                onClick={() => {
-                                    this.clickParent(item);
-                                }}
-                            >
+                            <li>
                                 {item.text}
-                            </ListItem>
+                            </li>
                             {
                                 flag[item.key] ? (
-                                    <ListItem>
-                                        <ul className={'child-ul'}>
-                                            {
-                                                item.children.map(child => (
-                                                    <li>{child.text}</li>
-                                                ))
-                                            }
-                                        </ul>
-                                    </ListItem>
+                                    <ul className={'child-ul'}>
+                                        {
+                                            item.children.map(child => (
+                                                <li>
+                                                    <Link to={child.page}>{child.text}</Link>
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
                                 ) : ''
                             }
                         </React.Fragment>
@@ -89,23 +85,27 @@ class MobileNavigation extends React.Component{
         const menus = this.state.menus;
         return (
             <div className={'navigation-content navigation-mobile'}>
-                <NavBar
-                    mode={"dark"}
-                    leftContent={<img src={Logo}/>}
-                    rightContent={
-                        <Icon
-                            className={'right-icon'}
-                            type={this.state.showMenu ? 'menu-unfold' : 'menu-fold'}
+                <div className={'mobile-nav'}>
+                    <div className={'left'}>
+                        <img src={Logo}/>
+                    </div>
+                    <div className={'content'}></div>
+                    <div className={'right'}>
+                        <span
+                            className={this.className(
+                                'iconfont',
+                                this.state.showMenu ? 'angel-indent' : 'angel-outdent'
+                            )}
                             onClick={this.clickNavRight}
                         />
-                    }
-                />
+                    </div>
+                </div>
                 {
                     this.state.showMenu ? (
                         <div>
-                            <List>
+                            <ul className={'mobile-menu'}>
                                 {this.generateList(menus)}
-                            </List>
+                            </ul>
                         </div>
                     ) : ''
                 }
@@ -114,4 +114,4 @@ class MobileNavigation extends React.Component{
     }
 }
 
-export default MobileNavigation;
+export default withRouter(MobileNavigation);

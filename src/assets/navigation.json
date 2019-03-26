@@ -3,7 +3,7 @@
         "text": "首页",
         "key": "home",
         "value": "home",
-        "page": "asdasd",
+        "page": "/",
         "icon": "",
         "children": []
     },
@@ -21,24 +21,7 @@
         "value": "example",
         "page": "asdasd",
         "icon": "",
-        "children": [
-            {
-                "text": "小程序",
-                "key": "mini",
-                "value": "mini",
-                "page": "asdasd",
-                "icon": "",
-                "children": []
-            },
-            {
-                "text": "网站",
-                "key": "website",
-                "value": "website",
-                "page": "asdasd",
-                "icon": "",
-                "children": []
-            }
-        ]
+        "children": []
     },
     {
         "text": "关于我们",

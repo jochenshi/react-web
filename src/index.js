@@ -6,8 +6,9 @@ import Site from './components/Site/index';
 
 import {isClient} from './utils/util';
 // import 'antd/dist/antd.css';
-import 'antd-mobile/dist/antd-mobile.css';
-// import './style/index.styl';
+// import 'antd-mobile/dist/antd-mobile.css';
+import './style/index.styl';
+import './assets/font/iconfont.css';
 
 ReactDOM.render((
         <BrowserRouter id={"asdasd"}>

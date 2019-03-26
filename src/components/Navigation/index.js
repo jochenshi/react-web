@@ -1,6 +1,7 @@
 import React from 'react';
-import {Menu} from 'antd';
+// import {Menu} from 'antd';
 import {Link} from 'react-router-dom';
+import {Menu} from '../index';
 
 import menuData from '../../assets/navigation.json'
 import Logo from '../../assets/logo.svg';
@@ -8,7 +9,7 @@ import Logo from '../../assets/logo.svg';
 import './style.styl';
 
 const {
-    SubMenu, Item
+    Item, SubMenu
 } = Menu;
 
 class Navigation extends React.Component {
@@ -17,7 +18,7 @@ class Navigation extends React.Component {
         console.log(menuData);
     }
 
-    generateMenu = (data) => {
+    generateMenus = (data) => {
         const menus = data || [];
         if(menus.length) {
             return menus.map(item => {
@@ -46,8 +47,31 @@ class Navigation extends React.Component {
         }
     };
 
-    clickMenu = (key) => {
-        console.log(key);
+    generateMenu = (data) => {
+        const menus = data || [];
+        if(menus.length) {
+            return menus.map(item => {
+                if(!item.children || !item.children.length) {
+                    return (
+                        <Item key={item.key}>
+                            <Link to={item.page}>{item.text}</Link>
+                        </Item>
+                    );
+                } else if(item.children.length) {
+                    return (
+                        <SubMenu
+                            key={item.key}
+                            title={item.text}
+                        >
+                            {this.generateMenu(item.children)}
+                        </SubMenu>
+                    );
+                }
+            });
+        } else {
+            console.error('menu data is empty');
+            return '';
+        }
     };
 
     render() {
@@ -62,7 +86,6 @@ class Navigation extends React.Component {
                 <Menu
                     mode={mode}
                     style={{'lineHeight': '64px'}}
-                    onClick={this.clickMenu}
                 >
                     {
                         this.generateMenu(menuData)
