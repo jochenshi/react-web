@@ -12,17 +12,24 @@ class Menu extends AngelComponent{
         };
     }
 
+    renderChildren = (children) => {
+        return (children || []).map((val, index) => {
+            return val;
+        });
+    };
+
+
     render() {
         return (
             <Provider
-                component={Menu}
+                value={this}
             >
                 <ul
                     className={this.className('angel-menu', {
                         'angel-menu-horizontal': this.props.mode === 'horizontal'
                     })}
                 >
-                    {this.props.children}
+                    {this.renderChildren(this.props.children)}
                 </ul>
             </Provider>
         );
