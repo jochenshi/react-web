@@ -14,7 +14,9 @@ class AboutPage extends React.Component{
         return (
             <div>
                 <span>menu test</span>
-                <Menu>
+                <Menu
+                    mode={'vertical'}
+                >
                     <Item>parent1</Item>
                     <SubMenu
                         title={'parent1'}

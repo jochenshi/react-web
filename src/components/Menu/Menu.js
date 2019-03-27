@@ -13,6 +13,7 @@ class Menu extends AngelComponent{
     }
 
     renderChildren = (children) => {
+        console.log(children);
         return (children || []).map((val, index) => {
             return val;
         });
@@ -26,7 +27,8 @@ class Menu extends AngelComponent{
             >
                 <ul
                     className={this.className('angel-menu', {
-                        'angel-menu-horizontal': this.props.mode === 'horizontal'
+                        'angel-menu-horizontal': this.props.mode === 'horizontal',
+                        'angel-menu-vertical': this.props.mode === 'vertical'
                     })}
                 >
                     {this.renderChildren(this.props.children)}

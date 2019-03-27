@@ -1,6 +1,5 @@
 .angel-menu{
   display flex
-  line-height 64px
   .angel-menu-item{
     padding 0 20px
     a{
@@ -13,8 +12,21 @@
     padding 0 20px
   }
   &.angel-menu-horizontal{
+    line-height 64px
     .angel-menu{
       flex-direction column
+    }
+  }
+  &.angel-menu-vertical{
+    flex-direction column
+    .angel-menu{
+      flex-direction column
+    }
+    .angel-menu-item{
+      line-height 46px
+    }
+    .angel-submenu-title{
+      line-height 46px
     }
   }
 }
