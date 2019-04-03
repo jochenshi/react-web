@@ -1,9 +1,14 @@
 import React from 'react';
 import Menu from '../../components/Menu/index';
+import AngelSelect from '../../common/component/select/index';
 
 const {
     Item, SubMenu
 } = Menu;
+
+const {
+    AngelOption
+} = AngelSelect;
 
 class AboutPage extends React.Component{
     constructor(props) {
@@ -32,4 +37,22 @@ class AboutPage extends React.Component{
     }
 }
 
-export default AboutPage;
+class About extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>
+                <AngelSelect>
+                    {[{'text': 'first', 'value': '1'},{'text': 'second', 'value': '2'}].map((item, index) => (
+                        <AngelOption key={index}>{item.text}</AngelOption>
+                    ))}
+                </AngelSelect>
+            </div>
+        );
+    }
+}
+
+export default About;
