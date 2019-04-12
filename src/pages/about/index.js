@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from '../../components/Menu/index';
 import AngelSelect from '../../common/component/select/index';
+import TestPage from '../test';
 
 const {
     Item, SubMenu
@@ -47,9 +48,15 @@ class About extends React.Component{
             <div>
                 <AngelSelect>
                     {[{'text': 'first', 'value': '1'},{'text': 'second', 'value': '2'}].map((item, index) => (
-                        <AngelOption key={index}>{item.text}</AngelOption>
+                        <AngelOption
+                            key={index}
+                            value={index}
+                        >
+                            {item.text}
+                        </AngelOption>
                     ))}
                 </AngelSelect>
+                <TestPage initialState={{count: 0}}/>
             </div>
         );
     }

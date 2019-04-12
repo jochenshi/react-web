@@ -1,11 +1,45 @@
 .angel-select{
   outline none
+  display inline-block
+  &.angel-select-open{
+    .select-icon{
+      .angel-down{
+        transform rotate(180deg)
+      }
+    }
+  }
   .angel-select-top{
     cursor pointer
     user-select none
+    width 200px
+    border 1px solid #e3e3e3
+    border-radius 5px
+    padding 5px 10px
+    box-sizing border-box
+    &:hover{
+      border-color aqua
+    }
+    .select-icon{
+      float right
+      i{
+        transition all 200ms linear
+      }
+    }
   }
   .angel-selection-content{
     cursor pointer
     user-select none
+    position absolute
+    border-radius 5px
+    box-shadow 0 2px 8px rgba(0,0,0,.15)
+  }
+  .angel-select-option{
+    padding 5px 10px
+    &:not(disabled):hover{
+      background-color #e6f3ff
+    }
+    &.angel-selected-option-active{
+      background-color #e6f3ff
+    }
   }
 }

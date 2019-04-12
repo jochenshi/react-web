@@ -19,8 +19,8 @@ class Site extends React.Component {
     render() {
         return (
             <div className="site-content">
-                <Navigation/>
-                <MobileNavigation/>
+                {/*<Navigation/>
+                <MobileNavigation/>*/}
                 <div className={'main-content'}>
                     <Switch>
                         <Route path="/" exact component={HomePage} />
